@@ -44,7 +44,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Author
 
-- [Your Name](https://github.com/yourusername)
+- [Yaashall](https://github.com/yaashall01)
 
 Feel free to connect with the author for any questions or suggestions.
 
