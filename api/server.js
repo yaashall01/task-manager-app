@@ -3,9 +3,10 @@ import mongoose from "mongoose";
 import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
-import tasksRoutes from './routes/tasks';
-import listsRoutes from './routes/lists';
-import usersRoutes from './routes/users';
+
+import tasksRoutes from './routes/tasks.js';
+import listsRoutes from './routes/lists.js';
+import usersRoutes from './routes/users.js';
 
 
 dotenv.config();
