@@ -1,1 +1,9 @@
-<p>sidebar works!</p>
+<div class="sidebar bg-dark text-white">
+    <h2>Task Lists</h2>
+    <ul>
+      <li *ngFor="let list of taskLists" class="cursor-pointer" (click)="selectList(list)">
+        {{ list.name }}
+      </li>
+    </ul>
+  </div>
+  

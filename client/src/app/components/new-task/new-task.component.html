@@ -1,1 +1,9 @@
-<p>new-task works!</p>
+<div class="new-task">
+    <h2 class="text-white">Create New Task</h2>
+    <form (submit)="addNewTask()">
+      <input type="text" [(ngModel)]="newTaskTitle" placeholder="Task Title" required class="form-control mb-2">
+      <input type="date" [(ngModel)]="newTaskDueDate" required class="form-control mb-2">
+      <button type="submit" class="btn btn-primary">Add Task</button>
+    </form>
+  </div>
+  

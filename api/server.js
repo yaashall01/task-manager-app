@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import tasksRoutes from './routes/tasks';
+import listsRoutes from './routes/lists';
+import usersRoutes from './routes/users';
+
 
 dotenv.config();
 
@@ -14,9 +18,14 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-//MongoDB connection 
+//Routes
+app.use('/api', tasksRoutes);
+app.use('/api', listsRoutes);
+app.use('/api', usersRoutes);
 
-mongoose.connect('mongodb://localhost:27017/task_manager_db', {
+
+//MongoDB connection 
+mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser : true,
     useUnifiedTopology :true,
 }).then(() => {
