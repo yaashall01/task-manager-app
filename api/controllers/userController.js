@@ -1,4 +1,4 @@
-import usertModel from './models/userModel.js';
+import User from './models/User.js';
 
 
 

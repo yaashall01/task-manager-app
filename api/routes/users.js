@@ -1,9 +1,11 @@
 import express from 'express';
+import {signup, login} from './controllers/userController.js';
+
 
 const router = express.Router();
 
 //Users Routes 
-router.post('/signup', signup);
+
 
 //  login and other user-related routes 
 router.post('/signup', signup);

@@ -1,4 +1,5 @@
-import listModel from './models/listModel.js';
+import List from './models/List.js';
+
 
 exports.getAllLists = async (req, res) => {
     try {
