@@ -1,9 +1,9 @@
-import User from './models/User.js';
+import User from '../../api/models/User.js';
 
 
 
 // Signup route
-exports.signup = async (req, res) => {
+export const signup = async (req, res) => {
   try {
     const { username, password } = req.body;
     // Check if the username already exists
@@ -23,7 +23,7 @@ exports.signup = async (req, res) => {
 };
 
 // Login route
-exports.login = async (req, res) => {
+export const login = async (req, res) => {
   try {
     const { username, password } = req.body;
     // Check if the user exists in the database
@@ -55,7 +55,7 @@ const generateToken = (userId) => {
   };
 
 
-  exports.getProfile = async (req, res) => {
+export const getProfile = async (req, res) => {
     try {
       // Assuming you have authentication middleware that extracts the user ID from the token
       const userId = req.user.id;
@@ -69,7 +69,7 @@ const generateToken = (userId) => {
     }
   };
 
-  exports.updateUser = async (req, res) => {
+  export const updateUser = async (req, res) => {
     try {
       // Assuming you have authentication middleware that extracts the user ID from the token
       const userId = req.user.id;
@@ -93,7 +93,7 @@ const generateToken = (userId) => {
     }
   };
 
-  exports.deleteUser = async (req, res) => {
+  export const deleteUser = async (req, res) => {
     try {
       // Assuming you have authentication middleware that extracts the user ID from the token
       const userId = req.user.id;

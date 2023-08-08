@@ -1,7 +1,7 @@
-import Task from './models/Task.js';
+import Task from '../../api/models/User.js';
 
 
-exports.getAllTasks = async (req, res) => {
+export const getAllTasks = async (req, res) => {
   try {
     const tasks = await Task.find();
     res.status(200).json(tasks);
@@ -12,7 +12,7 @@ exports.getAllTasks = async (req, res) => {
   }
 };
 
-exports.getTaskById = async (req, res) => {
+export const getTaskById = async (req, res) => {
   const taskId = req.params.id;
   try {
     const task = await Task.findById(taskId);
@@ -29,7 +29,7 @@ exports.getTaskById = async (req, res) => {
   }
 };
 
-exports.createTask = async (req, res) => {
+export const createTask = async (req, res) => {
   const {
     title,
     dueDate,
@@ -53,7 +53,7 @@ exports.createTask = async (req, res) => {
   }
 };
 
-exports.updateTask = async (req, res) => {
+export const updateTask = async (req, res) => {
   const taskId = req.params.id;
   const {
     title,
@@ -86,7 +86,7 @@ exports.updateTask = async (req, res) => {
   }
 };
 
-exports.deleteTask = async (req, res) => {
+export const deleteTask = async (req, res) => {
   const taskId = req.params.id;
   try {
     const deletedTask = await Task.findByIdAndDelete(taskId);

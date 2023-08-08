@@ -1,5 +1,7 @@
 import express from 'express';
 
+import {getAllLists, getListById, createList, updateList, deleteList} from '../../api/controllers/listController.js'
+
 const router = express.Router();
 
 // lists Routes

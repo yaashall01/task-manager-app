@@ -1,7 +1,7 @@
-import List from './models/List.js';
+import List from '../../api/models/User.js';
 
 
-exports.getAllLists = async (req, res) => {
+export const getAllLists = async (req, res) => {
     try {
       const lists = await List.find();
       res.status(200).json(lists);
@@ -10,7 +10,7 @@ exports.getAllLists = async (req, res) => {
     }
   };
 
-  exports.getListById = async (req, res) => {
+ export const getListById = async (req, res) => {
     const listId = req.params.id;
     try {
       const list = await List.findById(listId);
@@ -23,7 +23,7 @@ exports.getAllLists = async (req, res) => {
     }
   };
 
-  exports.createList = async (req, res) => {
+  export const createList = async (req, res) => {
     const { name } = req.body;
     try {
       const newList = new List({ name });
@@ -34,7 +34,7 @@ exports.getAllLists = async (req, res) => {
     }
   };
 
-  exports.updateList = async (req, res) => {
+  export const updateList = async (req, res) => {
     const listId = req.params.id;
     const { name } = req.body;
     try {
@@ -52,7 +52,7 @@ exports.getAllLists = async (req, res) => {
     }
   };
   
-  exports.deleteList = async (req, res) => {
+  export const deleteList = async (req, res) => {
     const listId = req.params.id;
     try {
       const deletedList = await List.findByIdAndDelete(listId);
